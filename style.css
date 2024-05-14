@@ -19,18 +19,121 @@
 body {
   margin: 0;
   background: var(--Cream);
+  font-family: var(--Montserrat-font);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  color: var(--Dark-grayish-blue);
 }
 
-.card {
-  display: flex;
-  background: var(--White);
-}
 
 /* Desktop style */
 @media screen and (max-width:1440px){
+  .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: var(--White);
+    width: 500px;
+    /* center card  */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    overflow: hidden;
+    height: auto;
+  }
+  
+  .card__image {
+    width: 50%;
+    background-size: cover;
+    content: url(images/image-product-desktop.jpg);
+  }
+  
+  .card__info {
+    width: 40%;
+    padding: 25px;
+  }
+  
+  .tag {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8em;
+    margin-top: 0;
+    color: var();
+  }
+  
+  .title {
+    font-size: 2em;
+    font-family: var(--Fraunces-font);
+    color: var(--Very-dark-blue);
+    width: 95%;
+    line-height: 100%;
+  }
+  
+  .description {
+    font-weight: 400;
+    margin-bottom: 0;
+    font-size: 0.92em;
+    line-height: 140%;
+  }
+  
+  .price_section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .new_price {
+    font-family: var(--Fraunces-font);
+    color: var(--Dark-cyan);
+  }
+  
+  .old_price {
+    text-decoration: line-through;
+    font-size: 0.5em;
+    color: var(--Dark-grayish-blue);
+  }
+  
+  .primary_button{
+    background: var(--Dark-cyan);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--White);
+    gap: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .primary_button:hover {
+    background: var(--Very-dark-blue);
+  }
+  
+  .button_title {
+    font-size: 0.9em;
+  }
   
 }
 /* Mobile style */
-@media screen and (max-width:375px){
+@media screen and (max-width:510px){
+  .card {
+    flex-direction: column;
+    width: 300px;
+  }
+
+  .card__image {
+    object-fit: cover;
+    width: 100%;
+    content: url(images/image-product-mobile.jpg);
+  }
   
+  .card__info {
+    width: auto;
+    padding: 15px;
+  }
+
+  .title {
+    margin: 0;
+  }
 }
